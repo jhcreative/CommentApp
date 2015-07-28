@@ -3,7 +3,7 @@ angular.module('app', ['angular-storage', 'ui.router', 'react', 'angular-riot', 
     .run(function(){
       FastClick.attach(document.body);
     })
-    .config(function($stateProvider, $locationProvider, $urlRouterProvider, $httpProvider) {
+    .config(function($stateProvider, $locationProvider, $urlRouterProvider, $httpProvider, $compileProvider) {
       // prep for html5 history activation
       $locationProvider.hashPrefix('!');
 

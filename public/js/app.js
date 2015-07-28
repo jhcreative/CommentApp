@@ -78077,7 +78077,7 @@ angular.module('app', ['angular-storage', 'ui.router', 'react', 'angular-riot', 
     .run(function(){
       FastClick.attach(document.body);
     })
-    .config(function($stateProvider, $locationProvider, $urlRouterProvider, $httpProvider) {
+    .config(function($stateProvider, $locationProvider, $urlRouterProvider, $httpProvider, $compileProvider) {
       // prep for html5 history activation
       $locationProvider.hashPrefix('!');
 
@@ -78115,6 +78115,14 @@ angular.module('app', ['angular-storage', 'ui.router', 'react', 'angular-riot', 
 
 
 
+
+// application main controller
+
+angular.module('app')
+    .controller('MainController', [
+      function() {
+        // wrapper controller only right now
+      }]);
 
 
 //# sourceMappingURL=app.js.map

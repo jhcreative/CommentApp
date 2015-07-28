@@ -47,17 +47,8 @@ exports.config = {
 					'bower_components/angular-picturefill/angular-picturefill.js',
 					//youtube plugin
 					'bower_components/angular-youtube-mb/src/angular-youtube-embed.js',
-          // application core - routing
-          'app/scripts/application/application.js',
-          // application core - sitewide controllers
-          'app/scripts/application/main.controller.js',
-          'app/scripts/application/login.controller.js',
-          // application core - sitewide angular services
-          'app/scripts/application/app-services/api.interceptor.service.js',
-          'app/scripts/application/app-services/login.service.js',
-          'app/scripts/application/app-services/user.store.service.js',
-          // application core - sitewide directives
-           'app/scripts/application/app-directives/app.nav.directive.js'
+          // application core
+          'app/scripts/application/application.js'
 				],
 
         // home module

@@ -1,0 +1,37 @@
+{
+  "name": "angular-riot",
+  "version": "0.0.1",
+  "main": "angular-riot.js",
+  "authors": [
+    "lucasbrigida <lucasbrigida@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucasbrigida/angular-riot.git"
+  },
+  "description": "riot.js module for angular",
+  "keywords": [
+    "riot",
+    "angular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/lucasbrigida/angular-riot",
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "da86b1a649731a842dfd0b3a90dd6649845ee7c7"
+  },
+  "_source": "git://github.com/lucasbrigida/angular-riot.git",
+  "_target": "~0.0.1",
+  "_originalSource": "angular-riot",
+  "_direct": true
+}

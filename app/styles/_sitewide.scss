@@ -1,0 +1,12 @@
+// sitewide styles
+body {
+  background: $color_brand-body-background;
+  @extend .brand_body-text;
+}
+h1, h2, h3, h4, h5, h6 {
+  @extend .brand_headline;
+}
+.link {
+  color: $color_brand-link;
+  text-decoration: none;
+}

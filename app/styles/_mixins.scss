@@ -1,0 +1,69 @@
+// mixins
+
+// mixins
+
+// rem mixin to convert a px value and property to px and em for backwards compatibility  http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+@mixin rem($property, $values) {
+  $base-font-size: 16; // should be same as html font-size declaration
+  $px : ();
+  $rem: ();
+
+  @each $value in $values {
+    @if $value == 0 or $value == auto {
+      $px : append($px , $value);
+      $rem: append($rem, $value);
+    }
+
+    @else {
+      $unit: unit($value);
+      $val: parseInt($value);
+
+      @if $unit == "px" {
+        $px : append($px,  $value);
+        $rem: append($rem, ($val / $base-font-size + rem));
+      }
+
+      @if $unit == "rem" {
+        $px : append($px,  ($val * $base-font-size + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+
+  @if $px == $rem {
+    #{$property}: $px;
+  } @else {
+    #{$property}: $px;
+    #{$property}: $rem;
+  }
+}
+
+
+
+// media query breakpoint mixin - strategy is mobile first
+@mixin breakpoint($point) {
+
+  // covers desktop/wider than our max-width body
+  @if $point == super {
+     @media (min-width: 1161px) { @content ; }
+  }
+
+  // in-between for pixel perfect iPad landscape
+  @if $point == tentwentyfour {
+     @media (min-width: 1024px) { @content ; }
+  }
+
+  // covers iPad in landscape mode and larger
+  @if $point == desktop {
+     @media (min-width: 901px) { @content ; }
+  }
+  // covers iPad in portrait mode and most Android tablets in portrait mode (800px & 900px)
+  @else if $point == tablet {
+     @media (min-width: 768px) { @content ; }
+  }
+}
+

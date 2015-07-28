@@ -1,0 +1,158 @@
+/* custom reset based on normalize.css v2.0.1 | MIT License | git.io/normalize
+ * and
+ * http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
+/* basic element definitions */
+/* line 20, app/styles/_reset.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, article, aside, big, cite, code, del, details, dfn, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, center, strong, em, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, input, textarea, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  display: block;
+  box-sizing: border-box; }
+
+/* exception */
+/* line 30, app/styles/_reset.scss */
+strong, em {
+  display: inline; }
+
+/* font base */
+/* line 33, app/styles/_reset.scss */
+html {
+  font-size: 100%;
+  /* Traditional Garamond-based serif stack */
+  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif; }
+
+/* line 40, app/styles/_reset.scss */
+body, input, button {
+  -webkit-font-smoothing: antialiased; }
+
+/* list styles */
+/* line 43, app/styles/_reset.scss */
+ol, ul {
+  list-style: none;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+  -webkit-padding-start: 0px; }
+
+/* blockquote styles */
+/* line 51, app/styles/_reset.scss */
+blockquote, q {
+  quotes: none; }
+
+/* line 56, app/styles/_reset.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+/* table styles */
+/* line 62, app/styles/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*  IE 8/9 : Styling for `hidden` attribute not present */
+/* line 68, app/styles/_reset.scss */
+[hidden] {
+  display: none; }
+
+/* Link outlines */
+/* line 71, app/styles/_reset.scss */
+a:focus {
+  outline: none; }
+
+/* line 76, app/styles/_reset.scss */
+a:active, a:hover {
+  outline: 0; }
+
+/* `audio` styles */
+/* line 79, app/styles/_reset.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/* Re-set default cursor for disabled elements. */
+/* line 86, app/styles/_reset.scss */
+button[disabled], input[disabled] {
+  cursor: default; }
+
+/* Compressive images for retina/all dpi devices */
+/* line 91, app/styles/_reset.scss */
+img {
+  width: 100%;
+  height: auto; }
+
+@font-face {
+  font-family: 'Bebas';
+  src: url('/fonts/bebasneue_regular-webfont.eot');
+  src: url('/fonts/bebasneue_regular-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/bebasneue_regular-webfont.woff2') format('woff2'), url('/fonts/bebasneue_regular-webfont.woff') format('woff'), url('/fonts/bebasneue_regular-webfont.ttf') format('truetype'), url('/fonts/bebasneue_regular-webfont.svg#/sites/all/themes/custom/basic//fonts/Bebas') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 2, app/styles/_extends.scss */
+.clearfix, .brand_horz-list {
+  display: block; }
+  /* line 4, app/styles/_extends.scss */
+  .clearfix::after, .brand_horz-list::after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+
+/* line 15, app/styles/_extends.scss */
+.brand_horz-list {
+  list-style-type: none; }
+
+/* line 19, app/styles/_extends.scss */
+.brand_horz-list-item {
+  display: inline-block;
+  float: left; }
+
+/* line 24, app/styles/_extends.scss */
+.brand_click {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20; }
+
+/* line 35, app/styles/_extends.scss */
+.brand_body-text, body {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #444444; }
+
+/* line 41, app/styles/_extends.scss */
+.brand_headline, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bebas', Arial, sans-serif;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #2a2a2a; }
+
+/* line 51, app/styles/_extends.scss */
+.shadow_card {
+  box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.35); }
+
+/* line 57, app/styles/_extends.scss */
+.brand_screen {
+  background: rgba(0, 0, 0, 0.5); }
+
+/* line 63, app/styles/_extends.scss */
+.transition {
+  transition: all 300ms ease-in-out; }
+
+/* line 2, app/styles/_sitewide.scss */
+body {
+  background: #dedede; }
+
+/* line 9, app/styles/_sitewide.scss */
+.link {
+  color: #007bb6;
+  text-decoration: none; }
+
+
+/*# sourceMappingURL=app.css.map*/

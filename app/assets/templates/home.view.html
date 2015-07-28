@@ -1,4 +1,25 @@
 <div class="home-content">
     <h4>Home</h4>
-    {{home.test}}
+    <!-- navigation -->
+    <ul class="nav-list">
+      <li ng-repeat="(key,value) in ::home.comments.model" class="nav-list-item">
+        <a href="#" class="nav-link" data-target="{{key}}">
+          {{value.displaytitle}}
+        </a>
+      </li>
+    </ul>
+    <!-- content -->
+    <ul class="content-list">
+      <li ng-repeat="(tKey,tValue) in ::home.comments.model" class="content-list-item" data-match="{{key}}">
+        <h3 class="topic-title">
+          {{tValue.displaytitle}}
+        </h3>
+        <ul class="response-list">
+          <li ng-repeat="(rKey, rValue) in tValue.byparent" ng-if="tValue.id==rKey" class="prime-response">
+            {{rValue}}<br>
+            ==========<br>
+          </li>
+        </ul>
+      </li>
+    </ul>
 </div>

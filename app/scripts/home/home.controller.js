@@ -7,9 +7,16 @@ angular.module('appHome', [{
   ]
 }])
   .controller('HomeController',
-    [function(store) {
+    ['appComments', 'store', function(appComments, store) {
 
-          var home = this;
-          home.test = 'TESTING';
+      // controller as
+      var home = this;
+      // init model
+      appComments.getItems().then(function(data){
+        // what we'll work with
+        home.comments = data;
+        // for cross-module potential
+        store.home = home.comments;
+      });
 
 }]);

@@ -3,7 +3,6 @@
 angular.module('appHome', [{
   files: [
     // '/css/home.css',
-
   ]
 }])
   .controller('HomeController',
@@ -12,7 +11,7 @@ angular.module('appHome', [{
       // controller as
       var home = this;
       // init model
-      appComments.getItems().then(function(data){
+      appComments.getItems().then(function(data) {
         // what we'll work with
         home.comments = data;
         // for cross-module potential

@@ -1,6 +1,6 @@
 angular.module('app', ['angular-storage', 'ui.router', 'react', 'angular-riot', 'ngAnimate', 'oc.lazyLoad', 'ng.picturefill', 'youtube-embed'])
     // speed up touch events
-    .run(function(){
+    .run(function() {
       FastClick.attach(document.body);
     })
     .config(function($stateProvider, $locationProvider, $urlRouterProvider, $httpProvider, $compileProvider) {
@@ -21,7 +21,7 @@ angular.module('app', ['angular-storage', 'ui.router', 'react', 'angular-riot', 
           controller: 'HomeController',
           controllerAs: 'home',
           resolve: {
-            resolveObj: function($ocLazyLoad){
+            resolveObj: function($ocLazyLoad) {
               return $ocLazyLoad.load({
                 name: 'appHome',
                 files: ['/js/home.js']

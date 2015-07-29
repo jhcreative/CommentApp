@@ -52,6 +52,25 @@
     <!-- application concatenated script files -->
     <script type="application/javascript" src="js/app.js"></script>
 
+    <!-- inline template -->
+    <script type="text/ng-template" id="commentTemplate">
+        <div class="comment-template-frame">
+          <div class="content-block">
+            <h6 class="author">
+              {{comment.author}}
+            </h6>
+            <p class="text">
+              {{comment.posttext}}
+            </p>
+          </div>
+          <!-- display replies if present -->
+          <ul ng-if="comment.theseComments" class="own-comment-list" >
+            <li ng-repeat="comment in comment.theseComments" ng-include="'commentTemplate'" class="own-comment-item level_{{comment.depth}}" >
+              </li>
+          </ul>
+        </div>
+    </script>
+
   </body>
 </html>
 

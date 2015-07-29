@@ -56,8 +56,10 @@ angular.module('appHome')
               for (rI = 0; rI < numResponses; rI++) {
 
                 var thisResponse = thisTopic.responses[rI],
-                    thisParentKey = thisResponse.parentid;
-                thisResponse.posttext = thisResponse.posttext.substring(3, (thisTopic.responses[0].posttext.length - 4));
+                    thisParentKey = thisResponse.parentid,
+                    thisContentSplit = thisResponse.posttext.split('p>'),
+                    thisSecondSplit = thisContentSplit[1].split('</');
+                thisResponse.posttext = thisSecondSplit[0];
 
                 if (thisParentKey !== 0) {
                   if (thisObject.byparent[thisParentKey]) {

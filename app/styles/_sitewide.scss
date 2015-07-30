@@ -5,8 +5,41 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
   @extend .brand_headline;
+  line-height: 1.1;
 }
 .link {
   color: $color_brand-link;
   text-decoration: none;
 }
+
+
+// header
+.app_headline {
+  text-align: center;
+  @include rem(font-size, 45px);
+
+  @include breakpoint(tablet){
+     @include rem(font-size, 60px);
+  }
+  @include breakpoint(desktop){
+     @include rem(font-size, 75px);
+  }
+}
+
+// body
+.app_states {
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+
+// footer
+.app_footer {
+  text-align: center;
+  padding: 5px 0 5px 0;
+  @include rem(font-size, 14px);
+}
+
+

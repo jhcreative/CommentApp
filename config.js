@@ -48,7 +48,8 @@ exports.config = {
           //youtube plugin
           'bower_components/angular-youtube-mb/src/angular-youtube-embed.js',
           // application core
-          'app/scripts/application/application.js'
+          'app/scripts/application/application.js',
+          'app/scripts/application/directives/state.setup.directive.js'
         ],
 
         // home module

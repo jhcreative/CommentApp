@@ -348,7 +348,21 @@ h1, h2, h3, h4, h5, h6 {
 /* line 70, app/styles/_content.scss */
 .comment-item {
   padding: 10px 0 10px 0; }
-  /* line 77, app/styles/_content.scss */
+  /* line 75, app/styles/_content.scss */
+  .comment-item .own-comment-item.level_2, .comment-item .own-comment-item.level_3 {
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.35; }
+  /* line 80, app/styles/_content.scss */
+  .comment-item .own-comment-item.level_4, .comment-item .own-comment-item.level_5 {
+    font-size: 12px;
+    font-size: 0.75rem;
+    line-height: 1.25; }
+  /* line 86, app/styles/_content.scss */
+  .comment-item .content-block {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eaeaea; }
+  /* line 92, app/styles/_content.scss */
   .comment-item .author {
     background: #eaeaea;
     padding: 15px 5px 10px 5px;
@@ -365,13 +379,12 @@ h1, h2, h3, h4, h5, h6 {
       .comment-item .author {
         width: 10%;
         height: 72px; } }
-  /* line 93, app/styles/_content.scss */
+  /* line 108, app/styles/_content.scss */
   .comment-item .text {
     min-height: 72px;
-    padding: 10px;
+    padding: 10px 0 10px 10px;
     width: 80%;
-    float: right;
-    border-bottom: 1px solid #eaeaea; }
+    float: right; }
     @media (min-width: 1024px) {
       .comment-item .text {
         width: 90%; } }

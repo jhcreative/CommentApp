@@ -32,7 +32,7 @@
         </p>
         <h4 ng-if="topic.theseComments" class="topic-subtitle">Comments</h4>
         <h4 ng-if="!topic.theseComments" class="topic-subtitle">No Comments Yet</h4>
-        <ul class="comment-list level_{{comment.depth}}">
+        <ul class="topic-comment-list ">
           <li ng-repeat="comment in topic.theseComments" ng-include="'commentTemplate'" class="comment-item level_{{comment.depth}}"></li>
         </ul>
       </li>

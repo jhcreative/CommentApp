@@ -90,10 +90,10 @@ img {
   font-style: normal; }
 
 /* line 2, app/styles/_extends.scss */
-.clearfix, .brand_horz-list, .nav-list {
+.clearfix, .brand_horz-list, .nav-list, .comment-item .content-block {
   display: block; }
   /* line 4, app/styles/_extends.scss */
-  .clearfix::after, .brand_horz-list::after, .nav-list::after {
+  .clearfix::after, .brand_horz-list::after, .nav-list::after, .comment-item .content-block::after {
     content: ".";
     display: block;
     height: 0;
@@ -313,7 +313,7 @@ h1, h2, h3, h4, h5, h6 {
       padding: 15px; } }
   @media (min-width: 901px) {
     .content-list-item {
-      padding: 20px; } }
+      padding: 20px 20px 200px 20px; } }
 
 /* line 44, app/styles/_content.scss */
 .topic-title {
@@ -337,9 +337,44 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   margin: 20px 0; }
 
-/* line 62, app/styles/_content.scss */
-.comment-list {
-  padding-bottom: 200px; }
+/* line 64, app/styles/_content.scss */
+.topic-comment-list {
+  padding-right: 10%; }
+
+/* line 67, app/styles/_content.scss */
+.own-comment-list {
+  padding-left: 10%; }
+
+/* line 70, app/styles/_content.scss */
+.comment-item {
+  padding: 10px 0 10px 0; }
+  /* line 77, app/styles/_content.scss */
+  .comment-item .author {
+    background: #eaeaea;
+    padding: 15px 5px 10px 5px;
+    width: 20%;
+    height: 60px;
+    float: left;
+    font-size: 15px;
+    font-size: 0.9375rem;
+    color: #999999;
+    text-align: right;
+    margin-top: 10px;
+    word-wrap: break-word; }
+    @media (min-width: 1024px) {
+      .comment-item .author {
+        width: 10%;
+        height: 72px; } }
+  /* line 93, app/styles/_content.scss */
+  .comment-item .text {
+    min-height: 72px;
+    padding: 10px;
+    width: 80%;
+    float: right;
+    border-bottom: 1px solid #eaeaea; }
+    @media (min-width: 1024px) {
+      .comment-item .text {
+        width: 90%; } }
 
 
 /*# sourceMappingURL=app.css.map*/

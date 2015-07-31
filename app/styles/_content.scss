@@ -1,0 +1,194 @@
+// content & comment styles
+
+.content-list {
+  position : absolute;
+  width: 100%;
+  height: calc(100% - 36px); // magic number is breadcrumb
+  top: 36px; // magic number is breadcrumb
+  left: 0;
+  background: $color_brand-white;
+  overflow: auto;
+
+  @include breakpoint(tentwentyfour){
+    position: absolute;
+    max-width: 1024px;
+    height: 100%; // magic number is breadcrumb + nav + border
+    top: 86px; // magic number is breadcrumb + nav + border
+    left: 50%;
+    margin-left: -512px;
+  }
+}
+.content-list-item {
+  @extend .brand_click;
+  z-index: -1;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  @extend .transition;
+  background: $color_brand-white;
+  padding: 10px;
+
+  &.current {
+    z-index: 10;
+    opacity: 1;
+    height: auto;
+  }
+
+  @include breakpoint(tablet){
+    padding: 15px;
+  }
+  @include breakpoint(desktop){
+    padding: 20px 20px 200px 20px;
+  }
+}
+.topic-title {
+  text-align: center;
+  @include rem(font-size, 32px);
+  @include breakpoint(tablet){
+    font-size: 36px;
+  }
+}
+.topic-body {
+  @include rem(font-size, 18px);
+  @include breakpoint(tentwentyfour){
+    font-size: 20px;
+  }
+}
+.topic-subtitle {
+  text-align: center;
+  margin: 20px 0;
+}
+
+
+// comments
+.topic-comment-list {
+  width: 90%;
+  margin: auto;
+}
+.own-comment-list {
+  padding-left: 10%;
+}
+.comment-item {
+  padding: 10px 0 10px 0;
+
+  .own-comment-item {
+    &.level_2,
+    &.level_3 {
+      @include rem(font-size, 14px);
+      line-height: 1.35;
+    }
+    &.level_4,
+    &.level_5 {
+      @include rem(font-size, 12px);
+      line-height: 1.25;
+    }
+  }
+
+  .content-block {
+      @extend .clearfix;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $color_brand-alt-background;
+  }
+
+  .author {
+    background: $color_brand-alt-background;
+    padding: 15px 5px 10px 5px;
+    width: 20%;
+    height: 60px;
+    float: left;
+    @include rem(font-size, 15px);
+    color: $color_brand-helper-grey;
+    text-align: right;
+    margin-top: 10px;
+    word-wrap: break-word;
+    @include breakpoint(tentwentyfour){
+      width: 10%;
+      height: 72px;
+    }
+  }
+  .text {
+    min-height: 72px;
+    padding: 10px 0 10px 10px;
+    width: 80%;
+    float: right;
+    @include breakpoint(tentwentyfour){
+      width: 90%;
+    }
+  }
+}
+
+// comment reply
+.reply-section {
+  @extend .clearfix;
+  padding-bottom: 10px;
+}
+.comment-reply-button {
+  @extend .brand_headline;
+  @include rem(font-size, 16px);
+  font-weight: bold;
+  cursor: pointer;
+  width : 20%;
+  height: 36px;
+  margin-top: 10px;
+  float: left;
+  padding-top: 6px;
+  text-align: right;
+
+  @include breakpoint(tentwentyfour){
+    width: 10%;
+  }
+  &.cancel {
+    background: $color_brand-black;
+    position: relative;
+  }
+  &.cancel::after {
+    content: 'Cancel';
+    @extend .brand_headline;
+    @include rem(font-size, 16px);
+    @extend .brand_click;
+    text-align: center;
+    padding: 6px 0 0 0;
+    color: $color_brand-white;
+  }
+}
+
+.comment-reply-block {
+  width: 80%;
+  float: right;
+  height: 0;
+  overflow: hidden;
+  margin: 10px 0 10px 0;
+  @extend .transition;
+  @extend .hardware-acceleration;
+
+  @include breakpoint(tentwentyfour){
+    width: 90%;
+  }
+
+  &.open {
+    height: 180px;
+  }
+  .reply-textarea {
+    font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+    @extend .brand_body-text;
+    padding: 10px;
+    width: calc(80% - 10px);
+    margin-left: 10px;
+    background: $color_brand-alt-background;
+
+  }
+  .reply-submit {
+    width: 120px;
+    height: 36px;
+    text-align: center;
+    @extend .brand_headline;
+    @include rem(font-size, 16px);
+    font-weight: bold;
+    margin-top: 10px;
+    background: $color_brand-black;
+    padding: 7px 10px;
+    color: $color_brand-white;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}

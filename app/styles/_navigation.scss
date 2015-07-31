@@ -1,0 +1,107 @@
+// navigation styles
+
+// breadcrumb
+.app_breadcrumb {
+  text-align: center;
+  color: $color_brand-helper-grey;
+  height: 36px;
+  position: relative;
+}
+
+// navigation items
+.nav-list {
+  position: relative;
+  background: $color_brand-outline;
+  height: 0px;
+  @extend .transition;
+  @extend .hardware-acceleration;
+
+  &.open {
+    height: auto;
+    z-index: 25;
+    .nav-list-item {
+      height: 50px;
+      background: $color_brand-white;
+    }
+
+  }
+  @include breakpoint(tentwentyfour){
+    @extend .brand_horz-list;
+    height: 50px;
+    max-width: 1024px;
+    margin: auto;
+  }
+}
+.nav-list-item {
+  border-bottom: 1px solid $color_brand-body-background;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  height: 0px;
+  overflow: hidden;
+
+  @include breakpoint(tentwentyfour){
+    width: 14.286%; // magic number is based on actual topics in this example, make dynamic for unknown states
+    z-index: 10;
+    height: 50px;
+    @extend .brand_horz-list-item;
+    border-left: 1px solid $color_brand-helper-grey;
+    border-bottom: 0px;
+    &:first-child { border-left: 0px; }
+  }
+}
+.nav-link {
+  @extend .brand_click;
+  @extend .link;
+  @extend .brand_headline;
+  line-height: 1.1;
+  color: $color_brand-black;
+  cursor: pointer;
+  padding-top: 14px;
+
+  .link-text {
+    @include rem(font-size, 20px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 15px 0 15px;
+    font-weight: bold;
+
+    @include breakpoint(tentwentyfour){
+      @include rem(font-size, 16px);
+    }
+  }
+
+  &.current {
+    border-bottom: 1px solid transparent;
+    background: $color_brand-white;
+    z-index: 10;
+    opacity: 1;
+  }
+
+  @include breakpoint(tentwentyfour){
+    padding-top: 17px;
+  }
+}
+
+// mobile nav button
+.mobile-nav-button {
+  position: absolute;
+  width: 0; height: 0;
+  top: 10px;
+  left: 50%;
+  margin-left: -85px; // magic number is home content only, make dynamic for additional states
+  border: 10px solid transparent;
+  border-top: 10px solid $color_brand-helper-grey;
+  cursor: pointer;
+  @extend .transition;
+  @extend .hardware-acceleration;
+  &.open {
+    top: -3px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid $color_brand-helper-grey;
+  }
+  @include breakpoint(tentwentyfour){
+    display: none;
+  }
+}

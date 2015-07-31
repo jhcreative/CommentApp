@@ -52,6 +52,7 @@ angular.module('appHome')
 
               // set topic title & initial content
               thisObject.id = thisTopic.responses[0].id;
+              thisObject.topic = thisKey;
               thisObject.displaytitle = thisTopic.topictitle;
               thisObject.displaycontent = thisTopic.responses[0].posttext.substring(3, (thisTopic.responses[0].posttext.length - 4));
               thisObject.byparent = {};
@@ -69,6 +70,7 @@ angular.module('appHome')
                     thisParentKey = thisResponse.parentid,
                     thisContentSplit = thisResponse.posttext.split('p>'),
                     thisSecondSplit = thisContentSplit[1].split('</');
+                thisResponse.topic = thisKey;
                 thisResponse.posttext = thisSecondSplit[0];
 
                 if (thisParentKey !== 0) {

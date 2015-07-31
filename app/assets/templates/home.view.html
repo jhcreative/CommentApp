@@ -30,6 +30,14 @@
         <p class="topic-body">
            {{topic.displaycontent}}
         </p>
+        <!-- reader comment block -->
+          <div class="reply-section">
+            <span class="comment-reply-button">Comment</span>
+            <div class="comment-reply-block">
+              <textarea class="reply-textarea" rows="5" placeholder="Be nice!"></textarea>
+              <span app-new-comment replyto="topic" count="home.comments.count" model="home.comments.model" class="reply-submit">Submit Comment</span>
+            </div>
+          </div>
         <h4 ng-if="topic.theseComments" class="topic-subtitle">Comments</h4>
         <h4 ng-if="!topic.theseComments" class="topic-subtitle">No Comments Yet</h4>
         <ul class="topic-comment-list ">

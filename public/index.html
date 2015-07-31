@@ -63,6 +63,14 @@
               {{comment.posttext}}
             </p>
           </div>
+          <!-- reader comment block -->
+          <div class="reply-section">
+            <span class="comment-reply-button">Comment</span>
+            <div class="comment-reply-block">
+              <textarea class="reply-textarea" rows="5" placeholder="Be nice!"></textarea>
+              <span app-new-comment replyto="comment" count="home.comments.count" class="reply-submit">Submit Comment</span>
+            </div>
+          </div>
           <!-- display replies if present -->
           <ul ng-if="comment.theseComments" class="own-comment-list" >
             <li ng-repeat="comment in comment.theseComments" ng-include="'commentTemplate'" class="own-comment-item level_{{comment.depth}}" >

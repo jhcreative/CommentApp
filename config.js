@@ -49,7 +49,8 @@ exports.config = {
           'bower_components/angular-youtube-mb/src/angular-youtube-embed.js',
           // application core
           'app/scripts/application/application.js',
-          'app/scripts/application/directives/state.setup.directive.js'
+          'app/scripts/application/directives/state.setup.directive.js',
+          'app/scripts/application/directives/new.comment.directive.js'
         ],
 
         // home module

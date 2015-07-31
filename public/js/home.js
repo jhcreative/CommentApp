@@ -16,7 +16,9 @@ angular.module('appHome', [{
         home.comments = data;
         // for cross-module potential
         store.home = home.comments;
+        console.log('HOME', home);
       });
+
 
 }]);
 
@@ -30,8 +32,8 @@ angular.module('appHome')
         var deferred = $q.defer();
         $http.get('/api/thread.json')
           .success(function(data) {
-            var theseResults = data;
-            console.log('RAW: ', theseResults);
+            var theseResults = data,
+                lastId = 0;
 
             // convert topic array into keyed object
             var raw = theseResults.topics,
@@ -46,11 +48,19 @@ angular.module('appHome')
               var thisObject = theseResults.model[thisKey],
                   numResponses = thisTopic.responses.length;
 
+
+
               // set topic title & initial content
               thisObject.id = thisTopic.responses[0].id;
               thisObject.displaytitle = thisTopic.topictitle;
               thisObject.displaycontent = thisTopic.responses[0].posttext.substring(3, (thisTopic.responses[0].posttext.length - 4));
               thisObject.byparent = {};
+
+               // increment lastId
+              if (lastId < thisObject.id) {
+                lastId = thisObject.id;
+                console.log('topic', lastId);
+              }
 
               // organize this topic's comments by parent
               for (rI = 0; rI < numResponses; rI++) {
@@ -71,6 +81,11 @@ angular.module('appHome')
                     // add first element
                     thisObject.byparent[thisParentKey].push(thisResponse);
                   }
+                  // increment lastId
+                  if (lastId < thisResponse.id) {
+                    lastId = thisObject.id;
+                    console.log( 'topic response', lastId);
+                  }
                 }
 
               }
@@ -81,11 +96,16 @@ angular.module('appHome')
                 if (theseComments !== undefined) {
                   // check for sub comments - recursive
                   var num = theseComments.length;
-                  console.log(num);
+
                   for (i = 0; i < num; i++) {
                     thisComment = theseComments[i];
                     if (byParent[thisComment.id]) {
                       thisComment.theseComments = matchComments(byParent, thisComment.id);
+                    }
+                    // increment lastId
+                    if (lastId < thisResponse.id) {
+                      lastId = thisResponse.id;
+                      console.log('recursive', lastId);
                     }
                   }
                 }
@@ -97,10 +117,11 @@ angular.module('appHome')
 
               // add processed topic to model
               theseResults.model[thisKey] = thisObject;
+              theseResults['count'] = lastId;
 
             }// end for loop
 
-            console.log('PROCESSED: ', theseResults);
+
             deferred.resolve(theseResults);
           });
 

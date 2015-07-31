@@ -16,6 +16,8 @@ angular.module('appHome', [{
         home.comments = data;
         // for cross-module potential
         store.home = home.comments;
+        console.log('HOME', home);
       });
+
 
 }]);

@@ -90,10 +90,10 @@ img {
   font-style: normal; }
 
 /* line 2, app/styles/_extends.scss */
-.clearfix, .brand_horz-list, .nav-list, .comment-item .content-block {
+.clearfix, .brand_horz-list, .nav-list, .comment-item .content-block, .reply-section {
   display: block; }
   /* line 4, app/styles/_extends.scss */
-  .clearfix::after, .brand_horz-list::after, .nav-list::after, .comment-item .content-block::after {
+  .clearfix::after, .brand_horz-list::after, .nav-list::after, .comment-item .content-block::after, .reply-section::after {
     content: ".";
     display: block;
     height: 0;
@@ -110,7 +110,7 @@ img {
   float: left; }
 
 /* line 24, app/styles/_extends.scss */
-.brand_click, .nav-link, .content-list-item {
+.brand_click, .nav-link, .content-list-item, .comment-reply-button.cancel::after {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -119,14 +119,14 @@ img {
   z-index: 20; }
 
 /* line 35, app/styles/_extends.scss */
-.brand_body-text, body {
+.brand_body-text, body, .comment-reply-block .reply-textarea {
   font-size: 15px;
   font-size: 0.9375rem;
   line-height: 1.5;
   color: #444444; }
 
 /* line 41, app/styles/_extends.scss */
-.brand_headline, h1, h2, h3, h4, h5, h6, .nav-link {
+.brand_headline, h1, h2, h3, h4, h5, h6, .nav-link, .comment-reply-button, .comment-reply-button.cancel::after, .comment-reply-block .reply-submit {
   font-family: 'Bebas', Arial, sans-serif;
   font-size: 24px;
   font-size: 1.5rem;
@@ -142,7 +142,7 @@ img {
   background: rgba(0, 0, 0, 0.5); }
 
 /* line 63, app/styles/_extends.scss */
-.transition, .nav-list, .mobile-nav-button, .content-list-item {
+.transition, .nav-list, .mobile-nav-button, .content-list-item, .comment-reply-block {
   transition: all 300ms ease-in-out; }
 
 /* line 2, app/styles/_sitewide.scss */
@@ -242,12 +242,13 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding: 0 15px 0 15px; }
+    padding: 0 15px 0 15px;
+    font-weight: bold; }
     @media (min-width: 1024px) {
       .nav-link .link-text {
         font-size: 16px;
         font-size: 1rem; } }
-  /* line 74, app/styles/_navigation.scss */
+  /* line 75, app/styles/_navigation.scss */
   .nav-link.current {
     border-bottom: 1px solid transparent;
     background: #ffffff;
@@ -257,7 +258,7 @@ h1, h2, h3, h4, h5, h6 {
     .nav-link {
       padding-top: 17px; } }
 
-/* line 87, app/styles/_navigation.scss */
+/* line 88, app/styles/_navigation.scss */
 .mobile-nav-button {
   position: absolute;
   width: 0;
@@ -268,7 +269,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 10px solid transparent;
   border-top: 10px solid #999999;
   cursor: pointer; }
-  /* line 98, app/styles/_navigation.scss */
+  /* line 99, app/styles/_navigation.scss */
   .mobile-nav-button.open {
     top: -3px;
     border: 10px solid transparent;
@@ -339,30 +340,31 @@ h1, h2, h3, h4, h5, h6 {
 
 /* line 64, app/styles/_content.scss */
 .topic-comment-list {
-  padding-right: 10%; }
+  width: 90%;
+  margin: auto; }
 
-/* line 67, app/styles/_content.scss */
+/* line 68, app/styles/_content.scss */
 .own-comment-list {
   padding-left: 10%; }
 
-/* line 70, app/styles/_content.scss */
+/* line 71, app/styles/_content.scss */
 .comment-item {
   padding: 10px 0 10px 0; }
-  /* line 75, app/styles/_content.scss */
+  /* line 76, app/styles/_content.scss */
   .comment-item .own-comment-item.level_2, .comment-item .own-comment-item.level_3 {
     font-size: 14px;
     font-size: 0.875rem;
     line-height: 1.35; }
-  /* line 80, app/styles/_content.scss */
+  /* line 81, app/styles/_content.scss */
   .comment-item .own-comment-item.level_4, .comment-item .own-comment-item.level_5 {
     font-size: 12px;
     font-size: 0.75rem;
     line-height: 1.25; }
-  /* line 86, app/styles/_content.scss */
+  /* line 87, app/styles/_content.scss */
   .comment-item .content-block {
     padding-bottom: 10px;
     border-bottom: 1px solid #eaeaea; }
-  /* line 92, app/styles/_content.scss */
+  /* line 93, app/styles/_content.scss */
   .comment-item .author {
     background: #eaeaea;
     padding: 15px 5px 10px 5px;
@@ -379,7 +381,7 @@ h1, h2, h3, h4, h5, h6 {
       .comment-item .author {
         width: 10%;
         height: 72px; } }
-  /* line 108, app/styles/_content.scss */
+  /* line 109, app/styles/_content.scss */
   .comment-item .text {
     min-height: 72px;
     padding: 10px 0 10px 10px;
@@ -388,6 +390,73 @@ h1, h2, h3, h4, h5, h6 {
     @media (min-width: 1024px) {
       .comment-item .text {
         width: 90%; } }
+
+/* line 121, app/styles/_content.scss */
+.reply-section {
+  padding-bottom: 10px; }
+
+/* line 125, app/styles/_content.scss */
+.comment-reply-button {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 20%;
+  height: 36px;
+  margin-top: 10px;
+  float: left;
+  padding-top: 6px;
+  text-align: right; }
+  @media (min-width: 1024px) {
+    .comment-reply-button {
+      width: 10%; } }
+  /* line 140, app/styles/_content.scss */
+  .comment-reply-button.cancel {
+    background: #2a2a2a;
+    position: relative; }
+  /* line 144, app/styles/_content.scss */
+  .comment-reply-button.cancel::after {
+    content: 'Cancel';
+    font-size: 16px;
+    font-size: 1rem;
+    text-align: center;
+    padding: 6px 0 0 0;
+    color: #ffffff; }
+
+/* line 155, app/styles/_content.scss */
+.comment-reply-block {
+  width: 80%;
+  float: right;
+  height: 0;
+  overflow: hidden;
+  margin: 10px 0 10px 0; }
+  @media (min-width: 1024px) {
+    .comment-reply-block {
+      width: 90%; } }
+  /* line 168, app/styles/_content.scss */
+  .comment-reply-block.open {
+    height: 180px; }
+  /* line 171, app/styles/_content.scss */
+  .comment-reply-block .reply-textarea {
+    font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+    padding: 10px;
+    width: calc(80% - 10px);
+    margin-left: 10px;
+    background: #eaeaea; }
+  /* line 180, app/styles/_content.scss */
+  .comment-reply-block .reply-submit {
+    width: 120px;
+    height: 36px;
+    text-align: center;
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    background: #2a2a2a;
+    padding: 7px 10px;
+    color: #ffffff;
+    margin-left: 10px;
+    cursor: pointer; }
 
 
 /*# sourceMappingURL=app.css.map*/

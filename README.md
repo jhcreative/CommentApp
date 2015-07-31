@@ -1,13 +1,13 @@
 # Single Page Comment Application
 ## John Hiemstra 7/31/15
 
-#### rewrites provided json model to be more UI friendly
-#### uses Angular recursive template to render comments
-#### creates new comments to match provided with 'Guest User' author name
-#### uses Angular to update local storage with new comments
-#### uses local storage to update DOM
-#### expandable to more pages/more topics/more comments
-#### mobile first approach to responsive presentation, not fully detailed
+* Rewrites provided json model to be more UI friendly
+* Uses Angular recursive template to render comments
+* Creates new comments to match provided with 'Guest User' author name
+* Uses Angular to update local storage with new comments
+* Uses local storage to update DOM
+* Expandable to more pages/more topics/more comments
+* Mobile first approach to responsive presentation, not fully detailed
 
 
 ### Callouts ###

@@ -1,13 +1,23 @@
 # Single Page Comment Application
 ## John Hiemstra 7/31/15
 
-* Rewrites provided json model to be more UI friendly
-* Uses Angular recursive template to render comments
-* Creates new comments to match provided with 'Guest User' author name
-* Uses Angular to update local storage with new comments
-* Uses local storage to update DOM
+### Highlights ###
+* Leverages my own customized Angualar SPA codebase to start
+* Rewrites provided json model to reflect intended UI & provide recursive pattern starting point
+* Uses Angular recursive template to render comments from JSON
+* Creates new comments to match provided model with 'Guest User' author name
+* New comments inserted into model recursively in custom directive
+* Uses Angular two-way binding to update DOM when model is updated
+* Has local storage included for future cross page expansion
 * Expandable to more pages/more topics/more comments
-* Mobile first approach to responsive presentation, not fully detailed
+* Mobile first approach to responsive presentation
+
+### Lowlights ###
+* New comments in DOM don't fire own reply button yet
+* Mobile first styling not detailed, especially in tablet type widths
+* Recursive template is stored inline, need to figure out how to have as own file
+* Uses $timeout in a few places in place of more thoughtful 'callback when data ready'
+* Does not screen/sanitize new comment input - angular whitelisting is active for offsite links by default
 
 
 ### Callouts ###

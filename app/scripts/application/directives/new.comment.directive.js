@@ -1,4 +1,4 @@
-function appNewComment($timeout){
+function appNewComment($timeout, store){
 
     return {
 
@@ -74,6 +74,9 @@ function appNewComment($timeout){
 
           // push model updates to DOM
           scope.$apply();
+
+          // update local storage
+          store.home = scope.model;
 
           // close/clear ui
           inputElement.val('');
